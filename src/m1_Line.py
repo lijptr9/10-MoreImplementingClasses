@@ -408,7 +408,7 @@ class Line(object):
             return (p1.y- p2.y)/(p1.x- p2.x)
 
         # --------------------------------------------------------------
-        # TODO: 6.
+        # DONE: 6.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -440,8 +440,11 @@ class Line(object):
         Type hints:
           :rtype: float
         """
+        a= self.start
+        b= self.end
+        return Point.distance_from(a, b)
         # --------------------------------------------------------------
-        # TODO: 7.
+        # DONE: 7.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
