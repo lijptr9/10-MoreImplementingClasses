@@ -90,14 +90,23 @@ def main():
 #
 ########################################################################
 class Baby(object):
-    def constuctor(self):
-        print('Hello baby',self)
-
+    def __init__(self, Baby_name):
+        self.name = Baby_name
+        print("Hello baby " + self.name)
+        self.count_number = 0
     def feed_baby(self):
-        print('Thank you for feeding baby', self)
+        print("Thank you for feeding baby " + self.name)
+        self.count_number = 0
+    def hour_passes(self):
+        self.count_number += 1
+        if self.count_number == 1:
+            print("Baby " + self.name +" is sleeping.")
+        if self.count_number == 2:
+            print("Baby " + self.name +" is awake.  Time for food.")
+        if self.count_number >= 3:
+            print('Baby '+self.name +' is CRYING uncontrollably!  Feed the ' \
+                                   'Baby!')
 
-
-    def hour_passses(self(n)):
 
 
 

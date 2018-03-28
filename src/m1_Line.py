@@ -218,6 +218,9 @@ class Line(object):
         """
         self.start = start.clone()
         self.end = end.clone()
+        self.count_clone = 0
+        self.begin_start = self.start.clone()
+        self.begin_end = self.end.clone()
         # --------------------------------------------------------------
         # DONE: 3.
         #   a. READ the above specification, including the Example.
@@ -327,7 +330,8 @@ class Line(object):
         Type hints:
           :rtype: Line
         """
-        return Line(self.start, self.end)
+        self.count_clone += 1
+        return Line(self.start.clone(), self.end.clone())
         # --------------------------------------------------------------
         # DONE: 4.
         #   a. READ the above specification, including the Example.
@@ -483,6 +487,7 @@ class Line(object):
         Type hints:
           :rtype: int:
         """
+        return self.count_clone
         # --------------------------------------------------------------
         # TODO: 8.
         #   a. READ the above specification, including the Example.
