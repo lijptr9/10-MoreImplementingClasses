@@ -517,8 +517,15 @@ class Line(object):
           :type  other_line: Line
           :rtype: Line:
         """
+        x1 = self.start.x + other_line.start.x
+        x2 = self.end.x + other_line.end.x
+        y1 = self.start.y + other_line.start.y
+        y2 = self.end.y + other_line.end.y
+        start = Point(x1, y1)
+        end = Point(x2, y2)
+        return Line(start, end)
         # --------------------------------------------------------------
-        # TODO: 9.
+        # DONE: 9.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -551,8 +558,15 @@ class Line(object):
           :type  other_line: Line
           :rtype: Line:
         """
+        x1 = self.start.x - other_line.start.x
+        x2 = self.end.x - other_line.end.x
+        y1 = self.start.y - other_line.start.y
+        y2 = self.end.y - other_line.end.y
+        start = Point(x1, y1)
+        end = Point(x2, y2)
+        return Line(start, end)
         # --------------------------------------------------------------
-        # TODO: 10.
+        # DONE: 10.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -578,8 +592,11 @@ class Line(object):
         Type hints:
           :rtype: Point
         """
+        x = (self.start.x + self.end.x)/2
+        y = (self.start.y + self.end.y)/2
+        return Point(x, y)
         # --------------------------------------------------------------
-        # TODO: 11.
+        # DONE: 11.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -614,8 +631,27 @@ class Line(object):
           :type  line2: Line
           :rtype: bool
         """
+        x1 = self.end.x - self.start.x
+        x2 = line2.end.x - line2.start.x
+        y1 = self.end.y - self.start.y
+        y2 = line2.end.y - line2.start.y
+        if x1==0:
+            if x2==0:
+                return True
+            else:
+                return False
+        else:
+            if x2==0:
+                return False
+            else:
+                a = y1 / x1
+                b = y2 / x2
+                if round(a,12) == round(b,12):
+                    return True
+                else:
+                    return False
         # --------------------------------------------------------------
-        # TODO: 12.
+        # DONE: 12.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -679,6 +715,7 @@ class Line(object):
             print(line1)  # Should print: Line[(-3, -4), (3, 4)]
             print(line2)  # Should print: Line[(0, 1), (10, 20)]
         """
+
         # --------------------------------------------------------------
         # TODO: 13.
         #   a. READ the above specification, including the Example.
